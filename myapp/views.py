@@ -69,6 +69,7 @@ def index(request):
 				fs.save(folder_directory+newfilename, pntiwdpFile)	
 				pntiwdp_image	=	str(currentMonth)+str(currentYear)+"/"+newfilename
 		print("hihihih")
+
 		return render(request, 'myapp/index.html',{"errors":validationErrors})
 
 
