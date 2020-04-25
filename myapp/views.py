@@ -68,7 +68,7 @@ def index(request):
 				newfilename = str(int(datetime.datetime.now().timestamp()))+str(random.randint(0,922337))+"."+extension
 				fs.save(folder_directory+newfilename, pntiwdpFile)	
 				pntiwdp_image	=	str(currentMonth)+str(currentYear)+"/"+newfilename
-
+		print("hihihih")
 		return render(request, 'myapp/index.html',{"errors":validationErrors})
 
 
