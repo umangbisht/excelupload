@@ -3,9 +3,22 @@
         <title>
             Excel file upload and processing : Django Example : ThePythonDjango.Com
         </title>
+        <style>
+            .msg-success{
+                color:green;
+            }
+            .error-message{
+                color:red;
+            }
+        </style>
     </head>
     <body style="margin-top: 30px;margin-left: 30px;">
-        <form action="{% url "myapp:index" %}" method="post" enctype="multipart/form-data">
+        <div class="msg-success">
+        {% if messages %}
+            {% for msg in messages %} <p class="msg-success">{{msg}}</p> {% endfor %}
+        {% endif %}
+        </div>
+        <form action="{% url 'myapp:index' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <input type="file"
                    title="Upload excel file"
